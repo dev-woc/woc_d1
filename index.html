@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Way of Code — AI Solutions Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-way">Way</span> <span class="logo-of">of</span> <span class="logo-code">Code</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link" data-hover>Work</a>
+      <a href="#services" class="nav-link" data-hover>Services</a>
+      <a href="#about" class="nav-link" data-hover>About</a>
+      <a href="#contact" class="nav-link" data-hover>Contact</a>
+    </div>
+    <a href="#cta" class="btn btn-nav" data-hover>Join the Vibe</a>
+    <button class="mobile-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#work" class="mobile-menu-link">Work</a>
+    <a href="#services" class="mobile-menu-link">Services</a>
+    <a href="#about" class="mobile-menu-link">About</a>
+    <a href="#contact" class="mobile-menu-link">Contact</a>
+    <a href="#cta" class="btn btn-nav">Join the Vibe</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="work">
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        <span class="hero-line"><span class="hero-word">We build</span></span>
+        <span class="hero-line"><span class="hero-word">intelligent</span></span>
+        <span class="hero-line"><span class="hero-word"><em>solutions</em></span></span>
+      </h1>
+      <p class="hero-sub">
+        An AI-native agency crafting custom models, automations, and digital
+        experiences that move your business forward.
+      </p>
+    </div>
+    <div class="hero-spline">
+      <div id="spline-hero" class="spline-container">
+        <div class="spline-loader">
+          <span class="spline-placeholder">Loading 3D…</span>
+        </div>
+        <canvas id="canvas-hero"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-text">Trusted by forward-thinking teams &nbsp;&mdash;&nbsp; AI Strategy &nbsp;&mdash;&nbsp; Custom Models &nbsp;&mdash;&nbsp; Automation &nbsp;&mdash;&nbsp; Integration &nbsp;&mdash;&nbsp;</span>
+      <span class="marquee-text">Trusted by forward-thinking teams &nbsp;&mdash;&nbsp; AI Strategy &nbsp;&mdash;&nbsp; Custom Models &nbsp;&mdash;&nbsp; Automation &nbsp;&mdash;&nbsp; Integration &nbsp;&mdash;&nbsp;</span>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <span class="section-label">What we do</span>
+      <h2 class="section-title">Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-hover>
+        <span class="service-number">01</span>
+        <h3 class="service-name">AI Strategy</h3>
+        <p class="service-desc">We audit your workflows and identify high-impact opportunities where AI delivers real ROI.</p>
+        <span class="service-arrow">&rarr;</span>
+      </div>
+      <div class="service-card" data-hover>
+        <span class="service-number">02</span>
+        <h3 class="service-name">Custom Models</h3>
+        <p class="service-desc">Fine-tuned LLMs and ML models built on your data, deployed to your infrastructure.</p>
+        <span class="service-arrow">&rarr;</span>
+      </div>
+      <div class="service-card" data-hover>
+        <span class="service-number">03</span>
+        <h3 class="service-name">Automation</h3>
+        <p class="service-desc">End-to-end pipeline automation — from data ingestion to decision-making at scale.</p>
+        <span class="service-arrow">&rarr;</span>
+      </div>
+      <div class="service-card" data-hover>
+        <span class="service-number">04</span>
+        <h3 class="service-name">AI Integration</h3>
+        <p class="service-desc">Seamlessly embed AI capabilities into your existing products and tech stack.</p>
+        <span class="service-arrow">&rarr;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <span class="section-label">Philosophy</span>
+      <h2 class="section-title">About Us</h2>
+      <p class="about-text">
+        We believe AI should feel invisible — woven into the fabric of your product,
+        not bolted on as an afterthought. Our team of engineers, researchers, and
+        designers work at the intersection of cutting-edge AI and human-centered
+        design to create solutions that are as elegant as they are powerful.
+      </p>
+      <p class="about-text">
+        Every project starts with understanding your unique challenge, then building
+        the simplest system that solves it brilliantly.
+      </p>
+    </div>
+    <div class="about-spline">
+      <div id="spline-about" class="spline-container spline-container--small">
+        <div class="spline-loader">
+          <span class="spline-placeholder">Loading 3D…</span>
+        </div>
+        <canvas id="canvas-about"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="cta">
+    <h2 class="cta-headline">
+      <span class="cta-line">Ready to</span>
+      <span class="cta-line"><em>join the vibe?</em></span>
+    </h2>
+    <p class="cta-sub">Let's build something intelligent together.</p>
+    <a href="mailto:hello@wayofcode.ai" class="btn btn-large" data-hover>Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo logo--footer">
+          <span class="logo-way">Way</span> <span class="logo-of">of</span> <span class="logo-code">Code</span>
+        </a>
+        <p class="footer-tagline">AI solutions that move you forward.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigate</h4>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Connect</h4>
+          <a href="#">Twitter / X</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <a href="mailto:hello@wayofcode.ai">hello@wayofcode.ai</a>
+          <p class="footer-address">Remote-first, worldwide.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Way of Code. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
