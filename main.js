@@ -1,41 +1,6 @@
 // ===== Register GSAP Plugins =====
 gsap.registerPlugin(ScrollTrigger);
 
-// ===== Custom Cursor (GPU-accelerated) =====
-const cursor = document.querySelector(".cursor");
-const follower = document.querySelector(".cursor-follower");
-const hoverElements = document.querySelectorAll("[data-hover]");
-
-let mouseX = 0;
-let mouseY = 0;
-let cursorX = 0;
-let cursorY = 0;
-let followerX = 0;
-let followerY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-}, { passive: true });
-
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.2;
-  cursorY += (mouseY - cursorY) * 0.2;
-  followerX += (mouseX - followerX) * 0.1;
-  followerY += (mouseY - followerY) * 0.1;
-
-  cursor.style.transform = `translate3d(${cursorX - cursor.offsetWidth / 2}px, ${cursorY - cursor.offsetHeight / 2}px, 0)`;
-  follower.style.transform = `translate3d(${followerX - follower.offsetWidth / 2}px, ${followerY - follower.offsetHeight / 2}px, 0)`;
-
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-hoverElements.forEach((el) => {
-  el.addEventListener("mouseenter", () => follower.classList.add("is-hover"));
-  el.addEventListener("mouseleave", () => follower.classList.remove("is-hover"));
-});
-
 // ===== Mobile Menu Toggle =====
 const mobileToggle = document.querySelector(".mobile-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
