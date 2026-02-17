@@ -155,7 +155,7 @@ document.querySelectorAll(".spline-container").forEach((container) => {
 
   const spline = new Application(canvas);
   await spline.load(
-    "https://prod.spline.design/2vf8jYPmLX73eEtB/scene.splinecode"
+    "./assets/hero.splinecode"
   );
 
   // Reveal canvas, hide loader
@@ -181,7 +181,7 @@ document.querySelectorAll(".spline-container").forEach((container) => {
 
       const spline = new Application(canvas);
       await spline.load(
-        "https://prod.spline.design/gvvgcSIUCaAAqIzQ/scene.splinecode"
+        "./assets/about.splinecode"
       );
 
       canvas.classList.add("is-loaded");
