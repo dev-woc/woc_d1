@@ -49,9 +49,9 @@ img {
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
   font-size: 1.25rem;
   line-height: 1;
+  will-change: transform;
 }
 
 .cursor::after {
@@ -68,7 +68,7 @@ img {
   left: 0;
   pointer-events: none;
   z-index: 9998;
-  transform: translate(-50%, -50%);
+  will-change: transform;
   transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 

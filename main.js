@@ -1,7 +1,7 @@
 // ===== Register GSAP Plugins =====
 gsap.registerPlugin(ScrollTrigger);
 
-// ===== Custom Cursor =====
+// ===== Custom Cursor (GPU-accelerated) =====
 const cursor = document.querySelector(".cursor");
 const follower = document.querySelector(".cursor-follower");
 const hoverElements = document.querySelectorAll("[data-hover]");
@@ -16,7 +16,7 @@ let followerY = 0;
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-});
+}, { passive: true });
 
 function animateCursor() {
   cursorX += (mouseX - cursorX) * 0.2;
@@ -24,10 +24,8 @@ function animateCursor() {
   followerX += (mouseX - followerX) * 0.1;
   followerY += (mouseY - followerY) * 0.1;
 
-  cursor.style.left = cursorX + "px";
-  cursor.style.top = cursorY + "px";
-  follower.style.left = followerX + "px";
-  follower.style.top = followerY + "px";
+  cursor.style.transform = `translate3d(${cursorX - cursor.offsetWidth / 2}px, ${cursorY - cursor.offsetHeight / 2}px, 0)`;
+  follower.style.transform = `translate3d(${followerX - follower.offsetWidth / 2}px, ${followerY - follower.offsetHeight / 2}px, 0)`;
 
   requestAnimationFrame(animateCursor);
 }
@@ -153,10 +151,15 @@ document.querySelectorAll(".spline-container").forEach((container) => {
     "https://esm.sh/@splinetool/runtime"
   );
 
-  const spline = new Application(canvas);
+  const spline = new Application(canvas, { renderOnDemand: true });
   await spline.load(
     "./assets/hero.splinecode"
   );
+
+  // Cap pixel ratio for performance
+  if (window.devicePixelRatio > 2) {
+    canvas.style.imageRendering = "auto";
+  }
 
   // Reveal canvas, hide loader
   canvas.classList.add("is-loaded");
@@ -179,7 +182,7 @@ document.querySelectorAll(".spline-container").forEach((container) => {
         "https://esm.sh/@splinetool/runtime"
       );
 
-      const spline = new Application(canvas);
+      const spline = new Application(canvas, { renderOnDemand: true });
       await spline.load(
         "./assets/about.splinecode"
       );
@@ -206,4 +209,4 @@ window.addEventListener("scroll", () => {
     gsap.to(navbar, { yPercent: 0, duration: 0.3, ease: "power2.out" });
   }
   lastScrollY = currentScrollY;
-});
+}, { passive: true });
